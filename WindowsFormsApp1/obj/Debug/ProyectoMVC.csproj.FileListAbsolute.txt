@@ -1,0 +1,11 @@
+F:\ANTONY\Proyectos Codigos\C#\_ProyectosAvanzados\SistemaVentas_MVC\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+F:\ANTONY\Proyectos Codigos\C#\_ProyectosAvanzados\SistemaVentas_MVC\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+F:\ANTONY\Proyectos Codigos\C#\_ProyectosAvanzados\SistemaVentas_MVC\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+F:\ANTONY\Proyectos Codigos\C#\_ProyectosAvanzados\SistemaVentas_MVC\WindowsFormsApp1\obj\Debug\ProyectoMVC.csprojAssemblyReference.cache
+F:\ANTONY\Proyectos Codigos\C#\_ProyectosAvanzados\SistemaVentas_MVC\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.MainPrincipal.resources
+F:\ANTONY\Proyectos Codigos\C#\_ProyectosAvanzados\SistemaVentas_MVC\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+F:\ANTONY\Proyectos Codigos\C#\_ProyectosAvanzados\SistemaVentas_MVC\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Vcliente.resources
+F:\ANTONY\Proyectos Codigos\C#\_ProyectosAvanzados\SistemaVentas_MVC\WindowsFormsApp1\obj\Debug\ProyectoMVC.csproj.GenerateResource.cache
+F:\ANTONY\Proyectos Codigos\C#\_ProyectosAvanzados\SistemaVentas_MVC\WindowsFormsApp1\obj\Debug\ProyectoMVC.csproj.CoreCompileInputs.cache
+F:\ANTONY\Proyectos Codigos\C#\_ProyectosAvanzados\SistemaVentas_MVC\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+F:\ANTONY\Proyectos Codigos\C#\_ProyectosAvanzados\SistemaVentas_MVC\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb

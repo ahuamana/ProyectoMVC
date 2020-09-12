@@ -1,0 +1,16 @@
+create database ProyectoMVC;
+
+use DB_TopStar
+
+create table Clientes (
+
+CODIGO nvarchar (11) primary key not null,
+DNI_RUC nvarchar(10),
+NOMBRES nvarchar (30) not null,
+APELLIDOS nvarchar (50) not null,
+DIRECCION nvarchar (70) not null,
+MANZANA nvarchar (10),
+LOTE int,
+CELULAR nvarchar (15),
+REFERENCIA nvarchar (100)
+)
