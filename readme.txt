@@ -10,8 +10,12 @@ git commit -a -m "Nombre_del_Commit"
 git push
 
 
+//Actualizar localmente
+git fetch
+git pull
 
-//eliminar
+
+//eliminar localmente
 
 git rm GRUPO1_PS_lab_sem03.pdf
 git commit
