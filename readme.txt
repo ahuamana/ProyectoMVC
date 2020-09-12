@@ -11,6 +11,8 @@ git push
 
 
 
+//eliminar
 
-
-
+git rm GRUPO1_PS_lab_sem03.pdf
+git commit
+git push
