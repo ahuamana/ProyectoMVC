@@ -1,5 +1,7 @@
 CREATE PROC SP_LISTARCLIENTES
 AS
-SELECT * FROM Clientes
+SELECT * 
+FROM Clientes
+WHERE isActiveCli =1
 GO
 

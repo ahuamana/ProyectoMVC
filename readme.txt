@@ -1,3 +1,9 @@
+//Iniciar Git
+Git init
+Git add *
+
+
+
 git add
 git commit -m "first commit"
 git branch -m master
@@ -10,7 +16,7 @@ git commit -a -m "Nombre_del_Commit"
 git push
 
 
-//Actualizar localmente
+//Actualizar de repositorio a local host
 git fetch
 git pull
 

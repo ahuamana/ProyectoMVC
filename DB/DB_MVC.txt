@@ -12,5 +12,16 @@ DIRECCION nvarchar (70) not null,
 MANZANA nvarchar (10),
 LOTE int,
 CELULAR nvarchar (15),
-REFERENCIA nvarchar (100)
+REFERENCIA nvarchar (100),
+isActiveCli int
 )
+
+
+
+
+
+
+======================================
+
+insert into Clientes values ('MK02','73962071','Antony','Huaman','av san martin 154','K',25,'930292619','ninguna',0);
+insert into Clientes values ('MK01','73962071','Antony','Huaman','av san martin 154','K',25,'930292619','ninguna',1);
