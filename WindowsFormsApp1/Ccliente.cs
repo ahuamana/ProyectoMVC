@@ -25,5 +25,32 @@ namespace WindowsFormsApp1
         }
 
 
+        public void insertarCliente(string codigo, string dni_ruc, string nombres, string apellidos, string direccion, string manzana, int lote, string celular, string referencia) {
+
+            Mcliente ingresar01 = new Mcliente();
+            ingresar01.insertarCliente(codigo, dni_ruc, nombres, apellidos,direccion, manzana, lote, celular, referencia);
+                    
+        }
+
+
+        public void actualizarCliente(string dni_ruc, string nombres, string apellidos, string direccion, string manzana, int lote, string celular, string referencia, string codigo) {
+
+            Mcliente actualizar01 = new Mcliente();
+            actualizar01.actualizarCliente(dni_ruc, nombres, apellidos, direccion, manzana, lote, celular, referencia, codigo);
+
+
+        }
+
+        public void eliminarCliente(string codigo)
+        {
+
+            Mcliente eliminar01 = new Mcliente();
+            eliminar01.eliminarCliente(codigo);
+
+
+        }
+
+
+
     }
 }
