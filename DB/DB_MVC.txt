@@ -17,7 +17,61 @@ isActiveCli int
 )
 
 
+create table TB_Proveedores(
 
+PROV_COD INT IDENTITY(1,1)PRIMARY KEY ,
+PROV_RUC_DNI nvarchar (10),
+PROV_NOM nvarchar (50),
+PROV_DIRECC nvarchar (100),
+PROV_EMAIL nvarchar (50),
+PROV_TELEF_CASA nvarchar (30),
+PROV_TELEF_OFICINA nvarchar (30),
+PROV_REFERENCIA nvarchar (200),
+PROV_isActive int
+
+);
+
+
+CREATE TABLE TB_Presentacion(
+
+PRES_COD int identity primary key,
+PRES_DESCRIPCION nvarchar(50),
+PRES_Cantidad int,
+PRES_isActive int
+);
+
+
+
+create table TB_Productos(
+
+PROD_COD INT IDENTITY (1,1) PRIMARY KEY,
+PROD_NOMBRE nvarchar (50),
+PROD_DESCRIPCION nvarchar (200),
+PROD_COD_PROVEEDOR int,
+PROD_PCOMPRA decimal (18,2),
+PROD_PVENTA decimal (18,2),
+PROD_COD_PRESEN int,
+PROD_isActive int,
+
+CONSTRAINT RELACION_A_PROVEEDORES FOREIGN KEY (PROD_COD_PROVEEDOR) REFERENCES TB_Proveedores (PROV_COD),
+CONSTRAINT RELACION_PRESENTACION FOREIGN KEY (PROD_COD_PRESEN) REFERENCES TB_Presentacion (PRES_COD)
+);
+
+
+create table TB_Stock (
+STOC_COD INT IDENTITY PRIMARY KEY NOT NULL,
+STOC_COD_PRODUCTO INT,
+STOC_INICIAL INT
+
+CONSTRAINT RELACION_A_PRODUCTOS FOREIGN KEY (STOC_COD_PRODUCTO) REFERENCES TB_Productos (PROD_COD)
+);
+
+
+
+
+CREATE TRIGGER TR_FILL_STOCK ON dbo.TB_Productos
+FOR INSERT AS INSERT INTO TB_Stock (STOC_COD_PRODUCTO,STOC_INICIAL)
+SELECT PROD_COD, 0 FROM Inserted
 
 
 
@@ -25,3 +79,30 @@ isActiveCli int
 
 insert into Clientes values ('MK02','73962071','Antony','Huaman','av san martin 154','K',25,'930292619','ninguna',0);
 insert into Clientes values ('MK01','73962071','Antony','Huaman','av san martin 154','K',25,'930292619','ninguna',1);
+
+
+insert into TB_Presentacion values ('UNIDADES',1,1);
+insert into TB_Presentacion values ('CAJAS',12,1);
+insert into TB_Presentacion values ('SIXPACK',6,1);
+insert into TB_Presentacion values ('PQT 4',4,1);
+insert into TB_Presentacion values ('PQT 6',6,1);
+insert into TB_Presentacion values ('PQT 12',12,1);
+insert into TB_Presentacion values ('PQT 13',13,1);
+insert into TB_Presentacion values ('PQT 14',14,1);
+insert into TB_Presentacion values ('PQT 15',15,1);
+insert into TB_Presentacion values ('PQT 16',16,1);
+
+
+
+
+insert into Presentacion values ('UNIDADES',1);
+insert into Presentacion values ('CAJAS',12);
+insert into Presentacion values ('SIXPACK',6);
+insert into Presentacion values ('PQT 4',4);
+insert into Presentacion values ('PQT 6',6);
+insert into Presentacion values ('PQT 12',12);
+insert into Presentacion values ('PQT 13',13);
+insert into Presentacion values ('PQT 14',14);
+insert into Presentacion values ('PQT 15',15);
+insert into Presentacion values ('PQT 16',16);
+

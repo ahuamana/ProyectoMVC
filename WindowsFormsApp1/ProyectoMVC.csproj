@@ -48,6 +48,9 @@
   <ItemGroup>
     <Compile Include="Ccliente.cs" />
     <Compile Include="Conexion.cs" />
+    <Compile Include="Cproducto.cs" />
+    <Compile Include="Cproveedor.cs" />
+    <Compile Include="Cstock.cs" />
     <Compile Include="MainPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -55,6 +58,9 @@
       <DependentUpon>MainPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="Mcliente.cs" />
+    <Compile Include="Mproducto.cs" />
+    <Compile Include="Mproveedor.cs" />
+    <Compile Include="Mstock.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Vcliente.cs">
@@ -62,6 +68,18 @@
     </Compile>
     <Compile Include="Vcliente.Designer.cs">
       <DependentUpon>Vcliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vproducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vproducto.Designer.cs">
+      <DependentUpon>Vproducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vproveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vproveedor.Designer.cs">
+      <DependentUpon>Vproveedor.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="MainPrincipal.resx">
       <DependentUpon>MainPrincipal.cs</DependentUpon>
@@ -77,6 +95,12 @@
     </Compile>
     <EmbeddedResource Include="Vcliente.resx">
       <DependentUpon>Vcliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vproducto.resx">
+      <DependentUpon>Vproducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vproveedor.resx">
+      <DependentUpon>Vproveedor.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -49,3 +49,215 @@ UPDATE Clientes SET isActiveCli=0
 WHERE CODIGO = @CODIGO
 
 
+
+============================================================================================================
+============================================================================================================
+
+
+----Procedimiento Guardar Proveedores
+
+CREATE PROC SP_A_PROVEEDORES
+@PROV_RUC_DNI nvarchar (10),
+@PROV_NOM nvarchar (50),
+@PROV_DIRECC nvarchar (100),
+@PROV_EMAIL nvarchar (50),
+@PROV_TELEF_CASA nvarchar (30),
+@PROV_TELEF_OFICINA nvarchar (30),
+@PROV_REFERENCIA nvarchar (200)
+AS
+INSERT INTO TB_Proveedores values (@PROV_RUC_DNI, @PROV_NOM,@PROV_DIRECC,@PROV_EMAIL, @PROV_TELEF_CASA,@PROV_TELEF_OFICINA, @PROV_REFERENCIA,1)
+
+
+---Procedimiento Listar Proveedores
+
+CREATE PROC SP_C_PROVEEDORES
+AS
+SELECT PROV_COD,PROV_RUC_DNI, PROV_NOM AS NOMBRE_PROVEEDOR,PROV_DIRECC AS DIRECCION, PROV_EMAIL, PROV_TELEF_CASA AS TELEFONO_CASA, PROV_TELEF_OFICINA AS TELEFONO_OFICINA, PROV_REFERENCIA AS REFERENCIA
+FROM TB_Proveedores
+WHERE PROV_isActive=1
+ORDER BY PROV_NOM ASC
+GO
+
+
+
+
+
+----Procedimiento Actualizar Proveedores 
+
+CREATE PROC SP_M_PROVEEDORES
+
+@PROV_RUC_DNI nvarchar (10),
+@PROV_NOM nvarchar (50),
+@PROV_DIRECC nvarchar (100),
+@PROV_EMAIL nvarchar (50),
+@PROV_TELEF_CASA nvarchar (30),
+@PROV_TELEF_OFICINA nvarchar (30),
+@PROV_REFERENCIA nvarchar (200),
+@PROV_COD int
+AS
+UPDATE TB_Proveedores set PROV_RUC_DNI=@PROV_RUC_DNI,PROV_NOM=@PROV_NOM ,PROV_DIRECC=@PROV_DIRECC,PROV_EMAIL=@PROV_EMAIL, PROV_TELEF_CASA=@PROV_TELEF_CASA,PROV_TELEF_OFICINA=@PROV_TELEF_OFICINA,PROV_REFERENCIA=@PROV_REFERENCIA
+WHERE PROV_COD=@PROV_COD
+
+
+----Procedimiento Eliminar Proveedores
+
+CREATE PROC SP_E_PROVEEDORES
+@PROV_COD int
+AS
+UPDATE TB_Proveedores set PROV_isActive=0
+WHERE PROV_COD= @PROV_COD
+
+
+----Procedimiento Buscar Proveedores
+
+CREATE PROC SP_B_PROVEEDORES
+@BUSCAR nvarchar(50)
+AS
+SELECT PROV_COD,PROV_RUC_DNI, PROV_NOM AS NOMBRE,PROV_DIRECC AS DIRECCION, PROV_EMAIL, PROV_TELEF_CASA AS TELEFONO_CASA, PROV_TELEF_OFICINA AS TELEFONO_OFICINA, PROV_REFERENCIA AS REFERENCIA
+FROM TB_Proveedores 
+WHERE PROV_NOM LIKE '%'+@BUSCAR+'%' AND PROV_isActive=1
+ORDER BY PROV_NOM ASC
+
+
+
+============================================================================================================
+============================================================================================================
+
+
+
+
+
+
+
+
+--Procedimiento Insertar Productos  
+
+CREATE PROC SP_A_PRODUCTOS
+@PROD_NOMBRE nvarchar (50),
+@PROD_DESCRIPCION nvarchar (200),
+@PROD_COD_PROVEEDOR int,
+@PROD_PCOMPRA decimal(18,2),
+@PROD_PVENTA decimal(18,2),
+@PROD_COD_PRESEN int
+AS
+INSERT INTO TB_Productos VALUES(@PROD_NOMBRE,@PROD_DESCRIPCION,@PROD_COD_PROVEEDOR,@PROD_PCOMPRA,@PROD_PVENTA,@PROD_COD_PRESEN,1)
+GO
+
+
+----------Procedimiento Listar Productos  23/08/2020  --Modificado 29/08/2020  --Modificado 21/09/2020
+
+create proc SP_C_PRODUCTOS
+as
+select  PROD_COD as CODIGO,PROD_NOMBRE as NOMBRE,PROD_PCOMPRA,PROD_PVENTA,PROD_DESCRIPCION as DESCRIPCION, PROV_RUC_DNI as CODIGO_PROVEEDOR,PROV_NOM as NOMBRE_PROVEEDOR, PROD_COD_PRESEN,PRES_DESCRIPCION AS [PRESENTACION]
+from TB_Productos 
+inner join TB_Proveedores ON TB_Productos.PROD_COD_PROVEEDOR=TB_Proveedores.PROV_COD
+inner join TB_Presentacion ON TB_Productos.PROD_COD_PRESEN=TB_Presentacion.PRES_COD
+WHERE PROD_isActive=1
+go
+
+
+------Procedimiento Actualizar 
+
+
+CREATE PROC SP_M_PRODUCTOS
+@PROD_NOMBRE nvarchar (50),
+@PROD_DESCRIPCION nvarchar (200),
+@PROD_COD_PROVEEDOR nvarchar(10),
+@PROD_PCOMPRA decimal(18,2),
+@PROD_PVENTA decimal(18,2),
+@PROD_COD_PRESEN int,
+@PROD_COD int
+AS
+UPDATE TB_Productos SET PROD_NOMBRE=@PROD_NOMBRE, PROD_DESCRIPCION=@PROD_DESCRIPCION, PROD_COD_PROVEEDOR=@PROD_COD_PROVEEDOR, PROD_PCOMPRA=@PROD_PCOMPRA, PROD_PVENTA=@PROD_PVENTA, PROD_COD_PRESEN=@PROD_COD_PRESEN
+WHERE PROD_COD=@PROD_COD
+GO
+
+
+------Procedimiento Eliminar  
+
+CREATE PROC SP_E_PRODUCTOS
+@PROD_COD int
+AS
+UPDATE TB_Productos set PROD_isActive=0
+WHERE PROD_COD= @PROD_COD
+
+
+
+------Procedimiento Buscar  
+
+CREATE PROC SP_B_PRODUCTOS
+@BUSCAR nvarchar (11)
+AS
+select  PROD_COD as CODIGO,PROD_NOMBRE as NOMBRE,PROD_PCOMPRA,PROD_PVENTA,PROD_DESCRIPCION as DESCRIPCION, PROV_RUC_DNI as CODIGO_PROVEEDOR,PROV_NOM as NOMBRE_PROVEEDOR, PROD_COD_PRESEN,PRES_DESCRIPCION AS [PRESENTACION]
+from TB_Productos 
+inner join TB_Proveedores ON TB_Productos.PROD_COD_PROVEEDOR=TB_Proveedores.PROV_COD
+inner join TB_Presentacion ON TB_Productos.PROD_COD_PRESEN=TB_Presentacion.PRES_COD
+WHERE PROD_NOMBRE LIKE '%'+@BUSCAR+'%' AND PROD_isActive=1
+GO
+
+
+--Mostrar comboBox Presentacion
+
+CREATE PROC SP_C_PRESENTACION
+AS
+SELECT * FROM TB_Presentacion
+GO
+
+
+============================================================================================================
+============================================================================================================
+
+
+
+
+--Procedimiento Agregar Stock 
+
+CREATE PROC SP_A_STOCK
+@STOC_COD_PRODUCTO int,
+@CANTIDAD int,
+@STOC_INICIAL int
+AS
+UPDATE TB_Stock SET STOC_INICIAL=(@CANTIDAD + @STOC_INICIAL)
+WHERE STOC_COD_PRODUCTO=@STOC_COD_PRODUCTO
+
+
+---Procedimiento Consultar Stock
+
+CREATE PROC SP_C_STOCK
+AS
+SELECT STOC_COD_PRODUCTO AS [CODIGO PRODUCTO], PROD_NOMBRE AS [NOMBRE PRODUCTO], PRES_DESCRIPCION AS [PRESENTACION], STOC_INICIAL
+FROM TB_Stock
+inner join TB_Productos ON TB_Stock.STOC_COD_PRODUCTO=TB_Productos.PROD_COD
+inner join tb_Presentacion ON TB_Presentacion.PRES_COD=TB_Productos.PROD_COD_PRESEN
+WHERE PROD_isActive=1
+
+--Procedimiento Disminuir Stock      --Creado 22/09/2020
+
+CREATE PROC SP_M_STOCK
+@STOC_COD_PRODUCTO int,
+@CANTIDAD int,
+@STOC_INICIAL int
+AS
+UPDATE TB_Stock SET STOC_INICIAL=(@STOC_INICIAL - @CANTIDAD )
+WHERE STOC_COD_PRODUCTO=@STOC_COD_PRODUCTO
+
+--Procedimiento Buscar Producto     --Creado 22/09/2020
+
+
+CREATE PROC SP_B_PRODUCTO_STOCK
+@BUSCAR NVARCHAR(50)
+AS
+SELECT STOC_COD_PRODUCTO AS [CODIGO PRODUCTO], PROD_NOMBRE AS [NOMBRE PRODUCTO], PRES_DESCRIPCION AS [PRESENTACION], STOC_INICIAL
+FROM TB_Stock
+inner join TB_Productos ON TB_Stock.STOC_COD_PRODUCTO=TB_Productos.PROD_COD
+inner join tb_Presentacion ON TB_Presentacion.PRES_COD=TB_Productos.PROD_COD_PRESEN
+WHERE PROD_NOMBRE LIKE '%'+@BUSCAR+'%'
+
+
+===========================================================================================
+===========================================================================================
+
+
+
+
+

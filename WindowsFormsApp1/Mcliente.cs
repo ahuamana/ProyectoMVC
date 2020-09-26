@@ -40,6 +40,7 @@ namespace WindowsFormsApp1
         public void insertarCliente( string codigo, string dni_ruc, string nombres, string apellidos, string direccion, string manzana, int lote, string celular, string referencia) {
 
 
+
             cmd.Connection = newConexion.abrirConexion();
             cmd.CommandText = "SP_INSERTARCLIENTE";
             cmd.CommandType = CommandType.StoredProcedure;
@@ -92,7 +93,11 @@ namespace WindowsFormsApp1
             cmd.CommandType = CommandType.StoredProcedure;
 
             cmd.Parameters.AddWithValue("CODIGO",codigo);
-         
+
+            cmd.ExecuteNonQuery();
+            cmd.Parameters.Clear();
+            newConexion.cerrarConexion();
+
         }
 
 

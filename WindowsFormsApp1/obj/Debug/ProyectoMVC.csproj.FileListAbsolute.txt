@@ -9,3 +9,5 @@ F:\ANTONY\Proyectos Codigos\C#\_ProyectosAvanzados\SistemaVentas_MVC\WindowsForm
 F:\ANTONY\Proyectos Codigos\C#\_ProyectosAvanzados\SistemaVentas_MVC\WindowsFormsApp1\obj\Debug\ProyectoMVC.csproj.CoreCompileInputs.cache
 F:\ANTONY\Proyectos Codigos\C#\_ProyectosAvanzados\SistemaVentas_MVC\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 F:\ANTONY\Proyectos Codigos\C#\_ProyectosAvanzados\SistemaVentas_MVC\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+F:\ANTONY\Proyectos Codigos\C#\_ProyectosAvanzados\SistemaVentas_MVC\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Vproveedor.resources
+F:\ANTONY\Proyectos Codigos\C#\_ProyectosAvanzados\SistemaVentas_MVC\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Vproducto.resources

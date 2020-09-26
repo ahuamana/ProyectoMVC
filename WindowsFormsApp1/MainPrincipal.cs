@@ -25,5 +25,21 @@ namespace WindowsFormsApp1
 
 
         }
+
+        private void menuProveedores_Click(object sender, EventArgs e)
+        {
+            Vproveedor vtn02 = new Vproveedor();
+            vtn02.Show();
+
+
+        }
+
+        private void menuProductos_Click(object sender, EventArgs e)
+        {
+
+            Vproducto vtn03 = new Vproducto();
+            vtn03.Show();
+
+        }
     }
 }

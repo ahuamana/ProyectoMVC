@@ -21,6 +21,8 @@ namespace WindowsFormsApp1
 
         public void ListarTablaFinal() {
 
+            //lista tabla cliente
+
             Ccliente lista01 = new Ccliente();
 
             tblCliente.DataSource = lista01.listarclientes2();
@@ -30,12 +32,16 @@ namespace WindowsFormsApp1
 
         public void mensajeError(string mensaje) {
 
+            //metodo mensaje error
+
             MessageBox.Show(mensaje, "Sistema de Ventas", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 
         }
 
 
         public void mensajeOK(string mensaje) {
+
+            //metodo mensaje ok
 
             MessageBox.Show(mensaje, "Sistema de Ventas", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -48,6 +54,7 @@ namespace WindowsFormsApp1
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            //agregar nuevo cliente
 
             Ccliente guardar01 = new Ccliente();
             guardar01.insertarCliente(txtCodCliente.Text, txtDniCliente.Text, txtNomCliente.Text, txtApeCliente.Text, txtDireCliente.Text,
@@ -61,6 +68,7 @@ namespace WindowsFormsApp1
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
+            //actualizar cliente
 
             Ccliente actualizar01 = new Ccliente();
             actualizar01.actualizarCliente(txtDniCliente.Text, txtNomCliente.Text, txtApeCliente.Text, txtDireCliente.Text,
@@ -73,6 +81,7 @@ namespace WindowsFormsApp1
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+            //eliminar cliente
 
             Ccliente eliminar01 = new Ccliente();
             eliminar01.eliminarCliente(txtCodCliente.Text);
@@ -85,6 +94,8 @@ namespace WindowsFormsApp1
 
         private void tblCliente_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            //pasar los datos de la tabla a los text box
+
             txtCodCliente.Text = tblCliente.SelectedRows[0].Cells[0].Value.ToString();
             txtDniCliente.Text = tblCliente.SelectedRows[0].Cells[1].Value.ToString();
             txtNomCliente.Text = tblCliente.SelectedRows[0].Cells[2].Value.ToString();
@@ -99,6 +110,8 @@ namespace WindowsFormsApp1
         }
 
         public void nuevo() {
+
+            //limpia todos los campos
 
             txtCodCliente.Clear();
             txtDniCliente.Clear();

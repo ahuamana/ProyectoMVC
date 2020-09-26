@@ -72,12 +72,14 @@
             this.menuProductos.Name = "menuProductos";
             this.menuProductos.Size = new System.Drawing.Size(180, 22);
             this.menuProductos.Text = "PRODUCTOS";
+            this.menuProductos.Click += new System.EventHandler(this.menuProductos_Click);
             // 
             // menuProveedores
             // 
             this.menuProveedores.Name = "menuProveedores";
             this.menuProveedores.Size = new System.Drawing.Size(180, 22);
             this.menuProveedores.Text = "PROVEEDORES";
+            this.menuProveedores.Click += new System.EventHandler(this.menuProveedores_Click);
             // 
             // fACTURASToolStripMenuItem
             // 
