@@ -9,10 +9,10 @@ using System.Data.SqlClient;
 
 namespace WindowsFormsApp1
 {
-    class Mstock
+    class Mstock : Conexion
     {
 
-        Conexion newConexion = new Conexion();
+        
         SqlCommand cmd = new SqlCommand();
         SqlDataReader LectorFilas;
 
@@ -23,15 +23,15 @@ namespace WindowsFormsApp1
 
             DataTable tabla01 = new DataTable();
 
-            cmd.Connection = newConexion.abrirConexion();
-            cmd.CommandText = "SP_C_STOCK";
+            cmd.Connection = abrirConexion();
+            cmd.CommandText = "SP_C_T_STOCK";
             cmd.CommandType = CommandType.StoredProcedure;
 
             LectorFilas = cmd.ExecuteReader();
             tabla01.Load(LectorFilas);
             LectorFilas.Close();
 
-            newConexion.cerrarConexion();
+            cerrarConexion();
 
             return tabla01;
         }
@@ -43,15 +43,15 @@ namespace WindowsFormsApp1
 
 
 
-            cmd.Connection = newConexion.abrirConexion();
-            cmd.CommandText = "SP_A_STOCK";
+            cmd.Connection = abrirConexion();
+            cmd.CommandText = "SP_A_T_STOCK";
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("STOC_COD_PRODUCTO", codigo_producto);
             cmd.Parameters.AddWithValue("CANTIDAD", cantidad);
             cmd.Parameters.AddWithValue("STOC_INICIAL", stock_inicial );
             cmd.ExecuteNonQuery();
             cmd.Parameters.Clear();
-            newConexion.cerrarConexion();
+            cerrarConexion();
 
 
 
@@ -62,15 +62,15 @@ namespace WindowsFormsApp1
 
 
 
-            cmd.Connection = newConexion.abrirConexion();
-            cmd.CommandText = "SP_M_STOCK";
+            cmd.Connection = abrirConexion();
+            cmd.CommandText = "SP_M_T_STOCK";
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("STOC_COD_PRODUCTO", codigo_producto);
             cmd.Parameters.AddWithValue("CANTIDAD", cantidad);
             cmd.Parameters.AddWithValue("STOC_INICIAL", stock_inicial);
             cmd.ExecuteNonQuery();
             cmd.Parameters.Clear();
-            newConexion.cerrarConexion();
+            cerrarConexion();
 
 
 

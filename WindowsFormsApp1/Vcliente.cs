@@ -56,12 +56,42 @@ namespace WindowsFormsApp1
         {
             //agregar nuevo cliente
 
-            Ccliente guardar01 = new Ccliente();
-            guardar01.insertarCliente(txtCodCliente.Text, txtDniCliente.Text, txtNomCliente.Text, txtApeCliente.Text, txtDireCliente.Text,
+
+            try
+            {
+
+
+                if (txtApeCliente.Text == string.Empty || txtCodCliente.Text == string.Empty ||
+                    txtDesCliente.Text == string.Empty || txtDireCliente.Text == string.Empty ||
+                    txtDniCliente.Text == string.Empty || txtLotCliente.Text == string.Empty ||
+                    txtManCliente.Text == string.Empty || txtNomCliente.Text == string.Empty ||
+                    txtTelCliente.Text == string.Empty)
+
+
+                {
+
+                    mensajeError("Todos los campos deben estar rellenados");
+
+
+                }
+                else
+                { 
+
+                    Ccliente guardar01 = new Ccliente();
+                    guardar01.insertarCliente(txtCodCliente.Text, txtDniCliente.Text, txtNomCliente.Text, txtApeCliente.Text, txtDireCliente.Text,
                                         txtManCliente.Text, Convert.ToInt32(txtLotCliente.Text), txtTelCliente.Text, txtDesCliente.Text);
 
-            mensajeOK("DATOS GUARDADOS CORRECTAMENTE!");
-            ListarTablaFinal();
+                    mensajeOK("DATOS GUARDADOS CORRECTAMENTE!");
+                    ListarTablaFinal();
+
+                }
+            }
+            catch (Exception ev)
+            {
+
+                MessageBox.Show(ev.Message);
+
+            }
 
 
         }
@@ -70,12 +100,45 @@ namespace WindowsFormsApp1
         {
             //actualizar cliente
 
-            Ccliente actualizar01 = new Ccliente();
-            actualizar01.actualizarCliente(txtDniCliente.Text, txtNomCliente.Text, txtApeCliente.Text, txtDireCliente.Text,
+            try
+            {
+
+
+                if (txtApeCliente.Text == string.Empty || txtCodCliente.Text == string.Empty ||
+                    txtDesCliente.Text == string.Empty || txtDireCliente.Text == string.Empty ||
+                    txtDniCliente.Text == string.Empty || txtLotCliente.Text == string.Empty ||
+                    txtManCliente.Text == string.Empty || txtNomCliente.Text == string.Empty ||
+                    txtTelCliente.Text == string.Empty)
+
+
+                {
+
+                    mensajeError("Todos los campos deben estar rellenados");
+
+
+                }
+                else
+                {
+
+
+
+                    Ccliente actualizar01 = new Ccliente();
+                    actualizar01.actualizarCliente(txtDniCliente.Text, txtNomCliente.Text, txtApeCliente.Text, txtDireCliente.Text,
                                         txtManCliente.Text, Convert.ToInt32(txtLotCliente.Text), txtTelCliente.Text, txtDesCliente.Text, txtCodCliente.Text);
 
-            mensajeOK("CLIENTE ACTUALIZADO CORRECTAMENTE!");
-            ListarTablaFinal();
+                    mensajeOK("DATOS ACTUALIZADO CORRECTAMENTE!");
+                    ListarTablaFinal();
+
+
+                }
+            }
+            catch (Exception ev)
+            {
+
+                MessageBox.Show(ev.Message);
+
+            }
+
 
         }
 
@@ -83,12 +146,37 @@ namespace WindowsFormsApp1
         {
             //eliminar cliente
 
-            Ccliente eliminar01 = new Ccliente();
-            eliminar01.eliminarCliente(txtCodCliente.Text);
+            try
+            {
+                string txtCodigo = this.txtCodCliente.Text;
 
 
-            mensajeOK("CLIENTE ELIMINADO CORRECTAMENTE!");
-            ListarTablaFinal();
+                if (this.txtCodCliente.Text == string.Empty)
+                {
+
+                    mensajeError("Error seleccione un CLIENTE a eliminar");
+
+                }
+
+                else
+                {
+
+
+                    Ccliente eliminar01 = new Ccliente();
+                    eliminar01.eliminarCliente(txtCodCliente.Text);
+
+
+                    mensajeOK("CLIENTE ELIMINADO CORRECTAMENTE!");
+                    ListarTablaFinal();
+
+                }
+            }
+            catch (Exception ev)
+            {
+
+                MessageBox.Show(ev.Message);
+
+            }
 
         }
 

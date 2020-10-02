@@ -212,6 +212,7 @@
             // 
             // btnNuevo
             // 
+            this.btnNuevo.Font = new System.Drawing.Font("Microsoft New Tai Lue", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevo.Location = new System.Drawing.Point(620, 165);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(85, 23);
@@ -222,6 +223,7 @@
             // 
             // btnEliminar
             // 
+            this.btnEliminar.Font = new System.Drawing.Font("Microsoft New Tai Lue", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.Location = new System.Drawing.Point(620, 128);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(85, 23);
@@ -232,6 +234,7 @@
             // 
             // btnActualizar
             // 
+            this.btnActualizar.Font = new System.Drawing.Font("Microsoft New Tai Lue", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActualizar.Location = new System.Drawing.Point(620, 85);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(85, 23);
@@ -242,6 +245,7 @@
             // 
             // btnGuardar
             // 
+            this.btnGuardar.Font = new System.Drawing.Font("Microsoft New Tai Lue", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.Location = new System.Drawing.Point(620, 43);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(85, 23);
@@ -279,6 +283,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tblCliente);
             this.Name = "Vcliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Vcliente";
             ((System.ComponentModel.ISupportInitialize)(this.tblCliente)).EndInit();
             this.ResumeLayout(false);

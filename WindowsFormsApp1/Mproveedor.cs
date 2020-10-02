@@ -8,11 +8,11 @@ using System.Data.SqlClient;
 
 namespace WindowsFormsApp1
 {
-    class Mproveedor
+    class Mproveedor :Conexion
     {
 
 
-        Conexion newConexion = new Conexion();
+        
         SqlCommand cmd = new SqlCommand();
         SqlDataReader LectorFilas;
 
@@ -23,15 +23,15 @@ namespace WindowsFormsApp1
 
             DataTable tabla01 = new DataTable();
 
-            cmd.Connection = newConexion.abrirConexion();
-            cmd.CommandText = "SP_C_PROVEEDORES";
+            cmd.Connection = abrirConexion();
+            cmd.CommandText = "SP_C_T_PROVEEDORES";
             cmd.CommandType = CommandType.StoredProcedure;
 
             LectorFilas = cmd.ExecuteReader();
             tabla01.Load(LectorFilas);
             LectorFilas.Close();
 
-            newConexion.cerrarConexion();
+            cerrarConexion();
 
             return tabla01;
         }
@@ -42,8 +42,8 @@ namespace WindowsFormsApp1
 
 
 
-            cmd.Connection = newConexion.abrirConexion();
-            cmd.CommandText = "SP_A_PROVEEDORES";
+            cmd.Connection = abrirConexion();
+            cmd.CommandText = "SP_A_T_PROVEEDORES";
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("PROV_RUC_DNI", ruc_dni);
             cmd.Parameters.AddWithValue("PROV_NOM", nombre);
@@ -54,7 +54,7 @@ namespace WindowsFormsApp1
             cmd.Parameters.AddWithValue("PROV_REFERENCIA ", referencia);
             cmd.ExecuteNonQuery();
             cmd.Parameters.Clear();
-            newConexion.cerrarConexion();
+            cerrarConexion();
 
 
 
@@ -64,8 +64,8 @@ namespace WindowsFormsApp1
         public void modificarProveedores(string ruc_dni, string nombre, string direccion, string email, string casa, string oficina, string referencia, int codigo)
         {
 
-            cmd.Connection = newConexion.abrirConexion();
-            cmd.CommandText = "SP_M_PROVEEDORES";
+            cmd.Connection = abrirConexion();
+            cmd.CommandText = "SP_M_T_PROVEEDORES";
             cmd.CommandType = CommandType.StoredProcedure;
 
 
@@ -81,22 +81,22 @@ namespace WindowsFormsApp1
 
             cmd.ExecuteNonQuery();
             cmd.Parameters.Clear();
-            newConexion.cerrarConexion();
+            cerrarConexion();
 
         }
 
         public void eliminarProveedores(int codigo)
         {
 
-            cmd.Connection = newConexion.abrirConexion();
-            cmd.CommandText = "SP_E_PROVEEDORES";
+            cmd.Connection = abrirConexion();
+            cmd.CommandText = "SP_E_T_PROVEEDORES";
             cmd.CommandType = CommandType.StoredProcedure;
             
             cmd.Parameters.AddWithValue("PROV_COD", codigo);
 
             cmd.ExecuteNonQuery();
             cmd.Parameters.Clear();
-            newConexion.cerrarConexion();
+            cerrarConexion();
         }
 
 

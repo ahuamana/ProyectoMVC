@@ -77,15 +77,46 @@ namespace WindowsFormsApp1
         {
             //Agregar producto
 
-            Cproducto agregar01 = new Cproducto();
-            agregar01.AgregarProducto(txtProd_Nombre.Text,txtProd_Descripcion.Text,
+            try
+            {
+
+
+                if (txtProd_Descripcion.Text == string.Empty || txtProd_Nombre.Text == string.Empty ||
+                    txtProd_Pcompra.Text == string.Empty || txtProd_Pventa.Text == string.Empty ||
+                    cmbProd_Proveedor.Text == string.Empty || cmbProd_Presentacion.Text == string.Empty)
+                    
+
+
+                {
+
+                    mensajeError("Todos los campos deben estar rellenados");
+
+
+                }
+                else
+                {
+
+
+
+
+                    Cproducto agregar01 = new Cproducto();
+                    agregar01.AgregarProducto(txtProd_Nombre.Text,txtProd_Descripcion.Text,
                                     Convert.ToInt32(cmbProd_Proveedor.SelectedValue), Convert.ToDouble(txtProd_Pcompra.Text),
                                     Convert.ToDouble(txtProd_Pventa.Text), Convert.ToInt32( cmbProd_Presentacion.SelectedValue));
 
-            mensajeOK("Operacion Exitosa!");
-            limpiar();
-            consultarProducto();
-            consultarStock();
+                    mensajeOK("Operacion Exitosa!");
+                    limpiar();
+                    consultarProducto();
+                    consultarStock();
+
+                }
+            }
+            catch (Exception ev)
+            {
+
+                MessageBox.Show(ev.Message);
+
+            }
 
         }
 
@@ -93,18 +124,52 @@ namespace WindowsFormsApp1
         {
             //Actualiza un producto
 
-            Cproducto modificar01 = new Cproducto();
-            modificar01.ModificarProducto(txtProd_Nombre.Text, txtProd_Descripcion.Text,
-                                    Convert.ToInt32(cmbProd_Proveedor.SelectedValue), Convert.ToDouble(txtProd_Pcompra.Text),
-                                    Convert.ToDouble(txtProd_Pventa.Text), Convert.ToInt32(cmbProd_Presentacion.SelectedValue),
-                                    Convert.ToInt32(txtProd_Codigo.Text));
+
+            try
+            {
+
+
+                if (txtProd_Descripcion.Text == string.Empty || txtProd_Nombre.Text == string.Empty ||
+                    txtProd_Pcompra.Text == string.Empty || txtProd_Pventa.Text == string.Empty ||
+                    cmbProd_Proveedor.Text == string.Empty || cmbProd_Presentacion.Text == string.Empty)
 
 
 
-            mensajeOK("Operacion Exitosa!");
-            limpiar();
-            consultarProducto();
-            consultarStock();
+                {
+
+                    mensajeError("Todos los campos deben estar rellenados");
+
+
+                }
+                else
+                {
+
+
+
+                    Cproducto modificar01 = new Cproducto();
+                    modificar01.ModificarProducto(txtProd_Nombre.Text, txtProd_Descripcion.Text,
+                                            Convert.ToInt32(cmbProd_Proveedor.SelectedValue), Convert.ToDouble(txtProd_Pcompra.Text),
+                                            Convert.ToDouble(txtProd_Pventa.Text), Convert.ToInt32(cmbProd_Presentacion.SelectedValue),
+                                            Convert.ToInt32(txtProd_Codigo.Text));
+
+
+
+                    mensajeOK("Operacion Exitosa!");
+                    limpiar();
+                    consultarProducto();
+                    consultarStock();
+
+                }
+            }
+            catch (Exception ev)
+            {
+
+                MessageBox.Show(ev.Message);
+
+            }
+
+
+
         }
 
         private void btnProd_Eliminar_Click(object sender, EventArgs e)
@@ -112,13 +177,41 @@ namespace WindowsFormsApp1
 
             //Eliminar un producto
 
-            Cproducto eliminar01 = new Cproducto();
-            eliminar01.EliminarProducto(Convert.ToInt32(txtProd_Codigo.Text));
 
-            mensajeOK("Operacion Exitosa!");
-            limpiar();
-            consultarProducto();
-            consultarStock();
+
+            try
+            {
+                string txtCodigo = this.txtProd_Codigo.Text;
+
+
+                if (this.txtProd_Codigo.Text == string.Empty)
+                {
+
+                    mensajeError("Error seleccione una fila a eliminar");
+
+                }
+
+                else
+                {
+
+
+
+                    Cproducto eliminar01 = new Cproducto();
+                    eliminar01.EliminarProducto(Convert.ToInt32(txtProd_Codigo.Text));
+
+                    mensajeOK("Operacion Exitosa!");
+                    limpiar();
+                    consultarProducto();
+                    consultarStock();
+
+                }
+            }
+            catch (Exception ev)
+            {
+
+                MessageBox.Show(ev.Message);
+
+            }
 
         }
 
@@ -141,15 +234,23 @@ namespace WindowsFormsApp1
         {
             //pasar a los text box
 
-            txtProd_Codigo.Text = tblProductos.SelectedRows[0].Cells[0].Value.ToString();
-            txtProd_Nombre.Text = tblProductos.SelectedRows[0].Cells[1].Value.ToString();
-            txtProd_Pcompra.Text = tblProductos.SelectedRows[0].Cells[2].Value.ToString();
-            txtProd_Pventa.Text = tblProductos.SelectedRows[0].Cells[3].Value.ToString();
-            txtProd_Descripcion.Text = tblProductos.SelectedRows[0].Cells[4].Value.ToString();
+            try
+            {
+                txtProd_Codigo.Text = tblProductos.SelectedRows[0].Cells[0].Value.ToString();
+                txtProd_Nombre.Text = tblProductos.SelectedRows[0].Cells[1].Value.ToString();
+                txtProd_Pcompra.Text = tblProductos.SelectedRows[0].Cells[2].Value.ToString();
+                txtProd_Pventa.Text = tblProductos.SelectedRows[0].Cells[3].Value.ToString();
+                txtProd_Descripcion.Text = tblProductos.SelectedRows[0].Cells[4].Value.ToString();
 
-            cmbProd_Proveedor.Text = tblProductos.SelectedRows[0].Cells[6].Value.ToString();
-            cmbProd_Presentacion.Text = tblProductos.SelectedRows[0].Cells[8].Value.ToString();
-            
+                cmbProd_Proveedor.Text = tblProductos.SelectedRows[0].Cells[6].Value.ToString();
+                cmbProd_Presentacion.Text = tblProductos.SelectedRows[0].Cells[8].Value.ToString();
+            }
+            catch (Exception ev)
+            {
+
+                MessageBox.Show(ev.Message);
+
+            }
 
 
         }

@@ -53,13 +53,43 @@ namespace WindowsFormsApp1
         {
             //agregar proveedor
 
-            Cproveedor agregar01 = new Cproveedor();
-            agregar01.AgregarProveedores(txtRUC_DNI.Text, txtNombre.Text, txtDireccion.Text, txtEmail.Text,
-                txtCasa.Text, txtOficina.Text, txtReferencia.Text);
+            try
+            {
 
-            mensajeOK("Operacion Exitosa!");
-            limpiar();
-            consultar();
+
+                if (txtCasa.Text == string.Empty || txtDireccion.Text == string.Empty ||
+                    txtEmail.Text == string.Empty || txtNombre.Text == string.Empty ||
+                    txtOficina.Text == string.Empty || txtReferencia.Text == string.Empty ||
+                    txtRUC_DNI.Text == string.Empty )
+
+
+                {
+
+                    mensajeError("Todos los campos deben estar rellenados");
+
+
+                }
+                else
+                {
+
+
+
+                    Cproveedor agregar01 = new Cproveedor();
+                    agregar01.AgregarProveedores(txtRUC_DNI.Text, txtNombre.Text, txtDireccion.Text, txtEmail.Text,
+                        txtCasa.Text, txtOficina.Text, txtReferencia.Text);
+
+                    mensajeOK("Operacion Exitosa!");
+                    limpiar();
+                    consultar();
+
+                }
+            }
+            catch (Exception ev)
+            {
+
+                MessageBox.Show(ev.Message);
+
+            }
 
         }
 
@@ -69,26 +99,82 @@ namespace WindowsFormsApp1
         {
             //actualizar proveedor
 
-            Cproveedor actualizar01 = new Cproveedor();
-            actualizar01.ModificarProveedores(txtRUC_DNI.Text, txtNombre.Text, txtDireccion.Text, txtEmail.Text,
-                txtCasa.Text, txtOficina.Text, txtReferencia.Text,Convert.ToInt32(txtCod.Text));
+            try
+            {
 
-            mensajeOK("Operacion Exitosa!");
-            limpiar();
-            consultar();
+
+                if (txtCasa.Text == string.Empty || txtDireccion.Text == string.Empty ||
+                    txtEmail.Text == string.Empty || txtNombre.Text == string.Empty ||
+                    txtOficina.Text == string.Empty || txtReferencia.Text == string.Empty ||
+                    txtRUC_DNI.Text == string.Empty)
+
+
+                {
+
+                    mensajeError("Todos los campos deben estar rellenados");
+
+
+                }
+                else
+                {
+
+                    Cproveedor actualizar01 = new Cproveedor();
+                    actualizar01.ModificarProveedores(txtRUC_DNI.Text, txtNombre.Text, txtDireccion.Text, txtEmail.Text,
+                        txtCasa.Text, txtOficina.Text, txtReferencia.Text,Convert.ToInt32(txtCod.Text));
+
+                    mensajeOK("Operacion Exitosa!");
+                    limpiar();
+                    consultar();
+
+                }
+            }
+            catch (Exception ev)
+            {
+
+                MessageBox.Show(ev.Message);
+
+            }
+
+
+
+
 
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             //eliminar proveedor
+          
+            try
+            {
+                string txtCodigo = this.txtCod.Text;
 
-            Cproveedor eliminar01 = new Cproveedor();
+
+                if (this.txtCod.Text == string.Empty)
+                {
+
+                    mensajeError("Error seleccione una fila a eliminar");
+
+                }
+
+                else
+                {
+
+                    Cproveedor eliminar01 = new Cproveedor();
             eliminar01.EliminarProveedores(Convert.ToInt32(txtCod.Text));
 
             mensajeOK("Operacion Exitosa!");
             limpiar();
             consultar();
+
+                }
+            }
+            catch (Exception ev)
+            {
+
+                MessageBox.Show(ev.Message);
+
+            }
 
         }
 

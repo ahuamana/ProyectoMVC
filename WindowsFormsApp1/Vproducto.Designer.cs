@@ -49,17 +49,17 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tblStock = new System.Windows.Forms.DataGridView();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtStock_Cantidad = new System.Windows.Forms.TextBox();
-            this.txtStock_Actual = new System.Windows.Forms.TextBox();
-            this.txtStock_Nom = new System.Windows.Forms.TextBox();
-            this.txtStock_Cod = new System.Windows.Forms.TextBox();
-            this.btnStock_Agregar = new System.Windows.Forms.Button();
             this.btnStock_Disminuir = new System.Windows.Forms.Button();
+            this.btnStock_Agregar = new System.Windows.Forms.Button();
+            this.txtStock_Cod = new System.Windows.Forms.TextBox();
+            this.txtStock_Nom = new System.Windows.Forms.TextBox();
+            this.txtStock_Actual = new System.Windows.Forms.TextBox();
+            this.txtStock_Cantidad = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.tblStock = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblProductos)).BeginInit();
@@ -284,6 +284,90 @@
             this.tabPage2.Text = "Stock";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // btnStock_Disminuir
+            // 
+            this.btnStock_Disminuir.Location = new System.Drawing.Point(583, 163);
+            this.btnStock_Disminuir.Name = "btnStock_Disminuir";
+            this.btnStock_Disminuir.Size = new System.Drawing.Size(75, 23);
+            this.btnStock_Disminuir.TabIndex = 10;
+            this.btnStock_Disminuir.Text = "Disminuir";
+            this.btnStock_Disminuir.UseVisualStyleBackColor = true;
+            this.btnStock_Disminuir.Click += new System.EventHandler(this.btnStock_Disminuir_Click);
+            // 
+            // btnStock_Agregar
+            // 
+            this.btnStock_Agregar.Location = new System.Drawing.Point(502, 163);
+            this.btnStock_Agregar.Name = "btnStock_Agregar";
+            this.btnStock_Agregar.Size = new System.Drawing.Size(75, 23);
+            this.btnStock_Agregar.TabIndex = 9;
+            this.btnStock_Agregar.Text = "Agregar";
+            this.btnStock_Agregar.UseVisualStyleBackColor = true;
+            this.btnStock_Agregar.Click += new System.EventHandler(this.btnStock_Agregar_Click);
+            // 
+            // txtStock_Cod
+            // 
+            this.txtStock_Cod.Location = new System.Drawing.Point(104, 51);
+            this.txtStock_Cod.Name = "txtStock_Cod";
+            this.txtStock_Cod.Size = new System.Drawing.Size(100, 20);
+            this.txtStock_Cod.TabIndex = 8;
+            // 
+            // txtStock_Nom
+            // 
+            this.txtStock_Nom.Location = new System.Drawing.Point(104, 77);
+            this.txtStock_Nom.Name = "txtStock_Nom";
+            this.txtStock_Nom.Size = new System.Drawing.Size(100, 20);
+            this.txtStock_Nom.TabIndex = 7;
+            // 
+            // txtStock_Actual
+            // 
+            this.txtStock_Actual.Location = new System.Drawing.Point(307, 77);
+            this.txtStock_Actual.Name = "txtStock_Actual";
+            this.txtStock_Actual.Size = new System.Drawing.Size(100, 20);
+            this.txtStock_Actual.TabIndex = 6;
+            // 
+            // txtStock_Cantidad
+            // 
+            this.txtStock_Cantidad.Location = new System.Drawing.Point(104, 132);
+            this.txtStock_Cantidad.Name = "txtStock_Cantidad";
+            this.txtStock_Cantidad.Size = new System.Drawing.Size(100, 20);
+            this.txtStock_Cantidad.TabIndex = 5;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(233, 80);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(68, 13);
+            this.label10.TabIndex = 4;
+            this.label10.Text = "Stock Actual";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(49, 135);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(49, 13);
+            this.label9.TabIndex = 3;
+            this.label9.Text = "Cantidad";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(54, 80);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(44, 13);
+            this.label8.TabIndex = 2;
+            this.label8.Text = "Nombre";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(58, 54);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(40, 13);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "Codigo";
+            // 
             // tblStock
             // 
             this.tblStock.AllowUserToAddRows = false;
@@ -297,90 +381,6 @@
             this.tblStock.TabIndex = 0;
             this.tblStock.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblStock_CellClick);
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(58, 54);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(40, 13);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "Codigo";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(54, 80);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(44, 13);
-            this.label8.TabIndex = 2;
-            this.label8.Text = "Nombre";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(49, 135);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(49, 13);
-            this.label9.TabIndex = 3;
-            this.label9.Text = "Cantidad";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(233, 80);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(68, 13);
-            this.label10.TabIndex = 4;
-            this.label10.Text = "Stock Actual";
-            // 
-            // txtStock_Cantidad
-            // 
-            this.txtStock_Cantidad.Location = new System.Drawing.Point(104, 132);
-            this.txtStock_Cantidad.Name = "txtStock_Cantidad";
-            this.txtStock_Cantidad.Size = new System.Drawing.Size(100, 20);
-            this.txtStock_Cantidad.TabIndex = 5;
-            // 
-            // txtStock_Actual
-            // 
-            this.txtStock_Actual.Location = new System.Drawing.Point(307, 77);
-            this.txtStock_Actual.Name = "txtStock_Actual";
-            this.txtStock_Actual.Size = new System.Drawing.Size(100, 20);
-            this.txtStock_Actual.TabIndex = 6;
-            // 
-            // txtStock_Nom
-            // 
-            this.txtStock_Nom.Location = new System.Drawing.Point(104, 77);
-            this.txtStock_Nom.Name = "txtStock_Nom";
-            this.txtStock_Nom.Size = new System.Drawing.Size(100, 20);
-            this.txtStock_Nom.TabIndex = 7;
-            // 
-            // txtStock_Cod
-            // 
-            this.txtStock_Cod.Location = new System.Drawing.Point(104, 51);
-            this.txtStock_Cod.Name = "txtStock_Cod";
-            this.txtStock_Cod.Size = new System.Drawing.Size(100, 20);
-            this.txtStock_Cod.TabIndex = 8;
-            // 
-            // btnStock_Agregar
-            // 
-            this.btnStock_Agregar.Location = new System.Drawing.Point(502, 163);
-            this.btnStock_Agregar.Name = "btnStock_Agregar";
-            this.btnStock_Agregar.Size = new System.Drawing.Size(75, 23);
-            this.btnStock_Agregar.TabIndex = 9;
-            this.btnStock_Agregar.Text = "Agregar";
-            this.btnStock_Agregar.UseVisualStyleBackColor = true;
-            this.btnStock_Agregar.Click += new System.EventHandler(this.btnStock_Agregar_Click);
-            // 
-            // btnStock_Disminuir
-            // 
-            this.btnStock_Disminuir.Location = new System.Drawing.Point(583, 163);
-            this.btnStock_Disminuir.Name = "btnStock_Disminuir";
-            this.btnStock_Disminuir.Size = new System.Drawing.Size(75, 23);
-            this.btnStock_Disminuir.TabIndex = 10;
-            this.btnStock_Disminuir.Text = "Disminuir";
-            this.btnStock_Disminuir.UseVisualStyleBackColor = true;
-            this.btnStock_Disminuir.Click += new System.EventHandler(this.btnStock_Disminuir_Click);
-            // 
             // Vproducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -388,6 +388,7 @@
             this.ClientSize = new System.Drawing.Size(741, 432);
             this.Controls.Add(this.tabControl1);
             this.Name = "Vproducto";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Vproducto";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);

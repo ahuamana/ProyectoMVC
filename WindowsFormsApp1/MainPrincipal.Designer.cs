@@ -63,21 +63,21 @@
             // menuClientes
             // 
             this.menuClientes.Name = "menuClientes";
-            this.menuClientes.Size = new System.Drawing.Size(180, 22);
+            this.menuClientes.Size = new System.Drawing.Size(152, 22);
             this.menuClientes.Text = "CLIENTES";
             this.menuClientes.Click += new System.EventHandler(this.menuClientes_Click);
             // 
             // menuProductos
             // 
             this.menuProductos.Name = "menuProductos";
-            this.menuProductos.Size = new System.Drawing.Size(180, 22);
+            this.menuProductos.Size = new System.Drawing.Size(152, 22);
             this.menuProductos.Text = "PRODUCTOS";
             this.menuProductos.Click += new System.EventHandler(this.menuProductos_Click);
             // 
             // menuProveedores
             // 
             this.menuProveedores.Name = "menuProveedores";
-            this.menuProveedores.Size = new System.Drawing.Size(180, 22);
+            this.menuProveedores.Size = new System.Drawing.Size(152, 22);
             this.menuProveedores.Text = "PROVEEDORES";
             this.menuProveedores.Click += new System.EventHandler(this.menuProveedores_Click);
             // 
@@ -101,6 +101,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

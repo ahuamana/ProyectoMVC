@@ -10,10 +10,10 @@ using System.Data.SqlClient;
 
 namespace WindowsFormsApp1
 {
-    class Mcliente
+    class Mcliente:Conexion
     {
 
-        Conexion newConexion = new Conexion();
+       
         SqlCommand cmd = new SqlCommand();
         SqlDataReader LectorFilas;
 
@@ -23,15 +23,15 @@ namespace WindowsFormsApp1
 
             DataTable tabla01 = new DataTable();
 
-            cmd.Connection = newConexion.abrirConexion();
-            cmd.CommandText = "SP_LISTARCLIENTES";
+            cmd.Connection = abrirConexion();
+            cmd.CommandText = "SP_C_T_CLIENTE";
             cmd.CommandType = CommandType.StoredProcedure;
 
             LectorFilas = cmd.ExecuteReader();
             tabla01.Load(LectorFilas);
             LectorFilas.Close();
 
-            newConexion.cerrarConexion();
+            cerrarConexion();
 
             return tabla01;
         }
@@ -41,8 +41,8 @@ namespace WindowsFormsApp1
 
 
 
-            cmd.Connection = newConexion.abrirConexion();
-            cmd.CommandText = "SP_INSERTARCLIENTE";
+            cmd.Connection = abrirConexion();
+            cmd.CommandText = "SP_A_T_CLIENTE";
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("CODIGO",codigo);
             cmd.Parameters.AddWithValue("DNI_RUC",dni_ruc);
@@ -55,7 +55,7 @@ namespace WindowsFormsApp1
             cmd.Parameters.AddWithValue("REFERENCIA",referencia);
             cmd.ExecuteNonQuery();
             cmd.Parameters.Clear();
-            newConexion.cerrarConexion();
+            cerrarConexion();
 
 
 
@@ -65,8 +65,8 @@ namespace WindowsFormsApp1
         public void actualizarCliente(string dni_ruc, string nombres, string apellidos, string direccion, string manzana, int lote, string celular, string referencia, string codigo)
         {
 
-            cmd.Connection = newConexion.abrirConexion();
-            cmd.CommandText = "SP_EDITARCLIENTE";
+            cmd.Connection = abrirConexion();
+            cmd.CommandText = "SP_M_T_CLIENTE";
             cmd.CommandType = CommandType.StoredProcedure;
 
             
@@ -82,21 +82,21 @@ namespace WindowsFormsApp1
 
             cmd.ExecuteNonQuery();
             cmd.Parameters.Clear();
-            newConexion.cerrarConexion();
+            cerrarConexion();
 
         }
 
         public void eliminarCliente(string codigo) {
 
-            cmd.Connection = newConexion.abrirConexion();
-            cmd.CommandText = "SP_ELIMINARCLIENTE";
+            cmd.Connection =abrirConexion();
+            cmd.CommandText = "SP_E_T_CLIENTE";
             cmd.CommandType = CommandType.StoredProcedure;
 
             cmd.Parameters.AddWithValue("CODIGO",codigo);
 
             cmd.ExecuteNonQuery();
             cmd.Parameters.Clear();
-            newConexion.cerrarConexion();
+            cerrarConexion();
 
         }
 
