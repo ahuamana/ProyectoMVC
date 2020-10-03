@@ -110,6 +110,9 @@
     <EmbeddedResource Include="Vproveedor.resx">
       <DependentUpon>Vproveedor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vusuario.resx">
+      <DependentUpon>Vusuario.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

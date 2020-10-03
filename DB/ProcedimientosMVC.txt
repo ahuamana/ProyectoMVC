@@ -1,4 +1,62 @@
+==============================================================================================
+==============================================================================================
+--Insertar Usuarios
 
+CREATE PROC SP_A_T_USUARIO
+
+@NOMBRES nvarchar(50),
+@APELLIDOS nvarchar (50),
+@SEXO nvarchar (1),
+@DOCUMENTO nvarchar (10),
+@DIRECCION nvarchar (100),
+@TELEFONO nvarchar(15),
+@EMAIL nvarchar(50),
+@PASSWORD nvarchar(20)
+AS
+INSERT INTO TB_USUARIOS VALUES (@NOMBRES,@APELLIDOS,@SEXO,@DOCUMENTO,@DIRECCION,@TELEFONO,@EMAIL,'Principal',@PASSWORD,1)
+
+--Consultar Usuarios
+
+CREATE PROC SP_C_T_USUARIO
+AS
+SELECT * 
+FROM TB_USUARIOS
+WHERE TRAB_isActive =1
+
+--Modificar Usuarios
+
+
+CREATE PROC SP_M_T_USUARIO
+
+@NOMBRES nvarchar(50),
+@APELLIDOS nvarchar (50),
+@SEXO nvarchar (1),
+@DOCUMENTO nvarchar (10),
+@DIRECCION nvarchar (100),
+@TELEFONO nvarchar(15),
+@EMAIL nvarchar(50),
+@PASSWORD nvarchar(20),
+@COD int
+AS
+UPDATE TB_USUARIOS SET TRAB_NOMBRES=@NOMBRES,TRAB_APELLIDOS=@APELLIDOS,TRAB_SEXO=@SEXO,TRAB_DOCUMENTO=@DOCUMENTO,TRAB_DIRECCION=@DIRECCION,TRAB_TELEFONO=@TELEFONO,TRAB_EMAIL=@EMAIL,TRAB_PASSWORD=@PASSWORD
+where TRAB_ID=@COD
+
+
+
+
+--Eliminar Usuario
+
+
+CREATE PROC SP_E_T_USUARIO
+@CODIGO int
+AS
+UPDATE TB_USUARIOS SET TRAB_isActive=0
+WHERE TRAB_ID= @CODIGO
+
+
+
+==============================================================================================
+==============================================================================================
 
 --Insertar en Clientes
 

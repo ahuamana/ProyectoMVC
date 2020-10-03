@@ -16,6 +16,25 @@ REFERENCIA nvarchar (100),
 isActiveCli int
 )
 
+create table TB_USUARIOS (
+
+TRAB_ID int IDENTITY(1,1) PRIMARY KEY,
+TRAB_NOMBRES nvarchar (50) not null,
+TRAB_APELLIDOS nvarchar (50)not null,
+TRAB_SEXO nvarchar(1) not null,
+TRAB_DOCUMENTO nvarchar(10),
+TRAB_DIRECCION nvarchar(100),
+TRAB_TELEFONO nvarchar(15),
+TRAB_EMAIL nvarchar(50),
+TRAB_ACCESO nvarchar(50),
+TRAB_PASSWORD nvarchar(20),
+TRAB_isActive int
+
+);
+
+
+
+
 
 create table TB_Proveedores(
 

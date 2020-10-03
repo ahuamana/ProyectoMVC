@@ -41,5 +41,14 @@ namespace WindowsFormsApp1
             vtn03.Show();
 
         }
+
+        private void uSUARIOSToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            Vusuario vtn04 = new Vusuario();
+            vtn04.Show();
+
+
+        }
     }
 }
