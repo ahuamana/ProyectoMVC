@@ -258,21 +258,42 @@ namespace WindowsFormsApp1
         private void btnStock_Agregar_Click(object sender, EventArgs e)
         {
             //agregar stock
+            try
+            {
+                Cstock agregar01 = new Cstock();
+                agregar01.AgregarStock( Convert.ToInt32(txtStock_Cod.Text), Convert.ToInt32( txtStock_Cantidad.Text), Convert.ToInt32( txtStock_Actual.Text ));
+                mensajeOK("Operacion Exitosa!");
+                consultarStock();
 
-            Cstock agregar01 = new Cstock();
-            agregar01.AgregarStock( Convert.ToInt32(txtStock_Cod.Text), Convert.ToInt32( txtStock_Cantidad.Text), Convert.ToInt32( txtStock_Actual.Text ));
 
-        }
+            }
+            catch (Exception ev)
+            {
+                MessageBox.Show(ev.Message);
+            
+            }
+
+}
 
         private void btnStock_Disminuir_Click(object sender, EventArgs e)
         {
             //disminuir stock
 
-            Cstock disminuir01 = new Cstock();
-            disminuir01.ModificarStock(Convert.ToInt32(txtStock_Cod.Text), Convert.ToInt32(txtStock_Cantidad.Text), Convert.ToInt32(txtStock_Actual.Text));
+            try
+            {
+                Cstock disminuir01 = new Cstock();
+                disminuir01.ModificarStock(Convert.ToInt32(txtStock_Cod.Text), Convert.ToInt32(txtStock_Cantidad.Text), Convert.ToInt32(txtStock_Actual.Text));
+                mensajeOK("Operacion Exitosa!");
+                consultarStock();
 
+            }
+            catch (Exception ev)
+            {
+                MessageBox.Show(ev.Message);
+            
+            }
 
-        }
+}
 
 
         public void consultarStock() {
@@ -288,11 +309,36 @@ namespace WindowsFormsApp1
         {
             //pasar datos a los tex box
 
-            txtStock_Cod.Text = tblProductos.SelectedRows[0].Cells[0].Value.ToString();
-            txtStock_Nom.Text = tblProductos.SelectedRows[0].Cells[1].Value.ToString();
-            txtStock_Actual.Text = tblProductos.SelectedRows[0].Cells[3].Value.ToString();
+            try
+            {
+                txtStock_Cod.Text = tblStock.SelectedRows[0].Cells[0].Value.ToString();
+                txtStock_Nom.Text = tblStock.SelectedRows[0].Cells[1].Value.ToString();
+                txtStock_Actual.Text = tblStock.SelectedRows[0].Cells[3].Value.ToString();
+            }
+            catch (Exception ev)
+            {
+                MessageBox.Show(ev.Message);
+            
+            }
+
+
 
 
         }
+
+
+        public void limpiarCamposStock() {
+
+            txtStock_Cod.Clear();
+            txtStock_Actual.Clear();
+            txtStock_Cantidad.Clear();
+            txtStock_Nom.Clear();
+            txtStock_Cantidad.Focus();
+
+        
+        }
+
+
+
     }
 }
