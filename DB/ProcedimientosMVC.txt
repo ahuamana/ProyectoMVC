@@ -322,6 +322,14 @@ WHERE PROD_NOMBRE LIKE '%'+@BUSCAR+'%'
 ===========================================================================================
 ===========================================================================================
 
+--Procedimiento Login		--Creado 3/10/2020
+
+CREATE PROC SP_C_T_USUARIO_LOGIN
+@USERNAME NVARCHAR(50),
+@PASSWORD NVARCHAR(50)
+AS
+SELECT * FROM TB_USUARIOS 
+where TRAB_EMAIL=@USERNAME AND TRAB_PASSWORD=@PASSWORD AND TRAB_isActive=1
 
 
 
