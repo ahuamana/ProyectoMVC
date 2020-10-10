@@ -49,5 +49,19 @@ namespace WindowsFormsApp1
 
 
         }
+
+
+        public DataTable buscarUsuario(string codigo)
+        {
+            DataTable tblrecibir02 = new DataTable();
+
+            Musuario buscar01 = new Musuario();
+            tblrecibir02=buscar01.BuscarUsuarios(codigo);
+
+            return tblrecibir02;
+        }
+
+
+
     }
 }

@@ -60,6 +60,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.tblStock = new System.Windows.Forms.DataGridView();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblProductos)).BeginInit();
@@ -79,6 +80,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.btnBuscar);
             this.tabPage1.Controls.Add(this.txtProd_Codigo);
             this.tabPage1.Controls.Add(this.tblProductos);
             this.tabPage1.Controls.Add(this.label6);
@@ -112,6 +114,7 @@
             this.txtProd_Codigo.ReadOnly = true;
             this.txtProd_Codigo.Size = new System.Drawing.Size(100, 20);
             this.txtProd_Codigo.TabIndex = 18;
+            this.txtProd_Codigo.Visible = false;
             // 
             // tblProductos
             // 
@@ -308,6 +311,7 @@
             // 
             this.txtStock_Cod.Location = new System.Drawing.Point(104, 51);
             this.txtStock_Cod.Name = "txtStock_Cod";
+            this.txtStock_Cod.ReadOnly = true;
             this.txtStock_Cod.Size = new System.Drawing.Size(100, 20);
             this.txtStock_Cod.TabIndex = 8;
             // 
@@ -315,6 +319,7 @@
             // 
             this.txtStock_Nom.Location = new System.Drawing.Point(104, 77);
             this.txtStock_Nom.Name = "txtStock_Nom";
+            this.txtStock_Nom.ReadOnly = true;
             this.txtStock_Nom.Size = new System.Drawing.Size(100, 20);
             this.txtStock_Nom.TabIndex = 7;
             // 
@@ -322,6 +327,7 @@
             // 
             this.txtStock_Actual.Location = new System.Drawing.Point(307, 77);
             this.txtStock_Actual.Name = "txtStock_Actual";
+            this.txtStock_Actual.ReadOnly = true;
             this.txtStock_Actual.Size = new System.Drawing.Size(100, 20);
             this.txtStock_Actual.TabIndex = 6;
             // 
@@ -381,6 +387,16 @@
             this.tblStock.TabIndex = 0;
             this.tblStock.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblStock_CellClick);
             // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Location = new System.Drawing.Point(195, 48);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscar.TabIndex = 19;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
             // Vproducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -435,5 +451,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnBuscar;
     }
 }

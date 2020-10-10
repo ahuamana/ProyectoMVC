@@ -260,10 +260,24 @@ namespace WindowsFormsApp1
             //agregar stock
             try
             {
-                Cstock agregar01 = new Cstock();
-                agregar01.AgregarStock( Convert.ToInt32(txtStock_Cod.Text), Convert.ToInt32( txtStock_Cantidad.Text), Convert.ToInt32( txtStock_Actual.Text ));
-                mensajeOK("Operacion Exitosa!");
-                consultarStock();
+                if (txtStock_Cantidad.Text != string.Empty || txtStock_Cod.Text== string.Empty)
+
+                {
+
+
+                    if (Convert.ToInt32(txtStock_Cantidad.Text) >= 0)
+
+                    {
+                        Cstock agregar01 = new Cstock();
+                        agregar01.AgregarStock(Convert.ToInt32(txtStock_Cod.Text), Convert.ToInt32(txtStock_Cantidad.Text), Convert.ToInt32(txtStock_Actual.Text));
+                        mensajeOK("Operacion Exitosa!");
+                        consultarStock();
+                        limpiarCamposStock();
+                    }
+                    else mensajeError("CANTIDAD NO PUEDE SER (-) NEGATIVO");
+
+                }
+                else mensajeError("TODOS LOS CAMPOS DEBEN ESTAR RELLENADOS");
 
 
             }
@@ -281,10 +295,33 @@ namespace WindowsFormsApp1
 
             try
             {
-                Cstock disminuir01 = new Cstock();
-                disminuir01.ModificarStock(Convert.ToInt32(txtStock_Cod.Text), Convert.ToInt32(txtStock_Cantidad.Text), Convert.ToInt32(txtStock_Actual.Text));
-                mensajeOK("Operacion Exitosa!");
-                consultarStock();
+
+                if (txtStock_Cantidad.Text != string.Empty || txtStock_Cod.Text == string.Empty)
+
+                {
+
+
+                    if (Convert.ToInt32(txtStock_Cantidad.Text) >= 0)
+
+                    {
+
+                        if (Convert.ToInt32( txtStock_Cantidad.Text) <= Convert.ToInt32( txtStock_Actual.Text))
+                        {
+                            Cstock disminuir01 = new Cstock();
+                            disminuir01.ModificarStock(Convert.ToInt32(txtStock_Cod.Text), Convert.ToInt32(txtStock_Cantidad.Text), Convert.ToInt32(txtStock_Actual.Text));
+                            mensajeOK("Operacion Exitosa!");
+                            consultarStock();
+                            limpiarCamposStock();
+
+                        }
+                        else mensajeError("STOCK INSUFICIENTE");
+
+                    }
+                    else mensajeError("CANTIDAD NO PUEDE SER (-) NEGATIVO");
+
+                }
+                else mensajeError("TODOS LOS CAMPOS DEBEN ESTAR RELLENADOS");
+
 
             }
             catch (Exception ev)
@@ -338,7 +375,13 @@ namespace WindowsFormsApp1
         
         }
 
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+
+            Cproducto buscar01 = new Cproducto();
+            tblProductos.DataSource= buscar01.buscarProducto(txtProd_Nombre.Text);
 
 
+        }
     }
 }

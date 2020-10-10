@@ -57,9 +57,6 @@ namespace WindowsFormsApp1
 
         public void agregarProducto(string nombre, string descripcion, int codigo_proveedor, double pcompra, double pventa, int codigo_presentacion)
         {
-
-
-
             cmd.Connection = abrirConexion();
             cmd.CommandText = "SP_A_T_PRODUCTOS";
             cmd.CommandType = CommandType.StoredProcedure;
@@ -72,11 +69,7 @@ namespace WindowsFormsApp1
             cmd.ExecuteNonQuery();
             cmd.Parameters.Clear();
             cerrarConexion();
-
-
-
         }
-
 
         public void modificarProducto(string nombre, string descripcion, int codigo_proveedor, double pcompra, double pventa, int codigo_presentacion, int codigo_producto)
         {
@@ -112,6 +105,25 @@ namespace WindowsFormsApp1
             cmd.ExecuteNonQuery();
             cmd.Parameters.Clear();
             cerrarConexion();
+        }
+
+        public DataTable BuscarProducto(string codigo)
+        {
+
+            DataTable tabla01 = new DataTable();
+
+            cmd.Connection = abrirConexion();
+            cmd.CommandText = "SP_B_T_PRODUCTO";
+            cmd.Parameters.AddWithValue("BUSCAR", codigo);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            LectorFilas = cmd.ExecuteReader();
+            tabla01.Load(LectorFilas);
+            LectorFilas.Close();
+
+            cerrarConexion();
+
+            return tabla01;
         }
 
 

@@ -64,6 +64,17 @@ namespace WindowsFormsApp1
         }
 
 
+        public DataTable buscarProducto(string codigo)
+        {
+
+            DataTable tblrecibir03;
+
+            Mproducto buscar01 = new Mproducto();
+            tblrecibir03 = buscar01.BuscarProducto(codigo);
+            return tblrecibir03;
+
+        }
+
 
 
 

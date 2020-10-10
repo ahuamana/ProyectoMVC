@@ -51,6 +51,8 @@
             this.rbtnMasculino = new System.Windows.Forms.RadioButton();
             this.rbtnFemenino = new System.Windows.Forms.RadioButton();
             this.txtCod = new System.Windows.Forms.TextBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.tblUsuario)).BeginInit();
             this.SuspendLayout();
             // 
@@ -255,18 +257,38 @@
             // 
             // txtCod
             // 
-            this.txtCod.Location = new System.Drawing.Point(117, 12);
+            this.txtCod.Location = new System.Drawing.Point(22, 9);
             this.txtCod.Name = "txtCod";
             this.txtCod.ReadOnly = true;
-            this.txtCod.Size = new System.Drawing.Size(100, 20);
+            this.txtCod.Size = new System.Drawing.Size(36, 20);
             this.txtCod.TabIndex = 48;
             this.txtCod.Visible = false;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Font = new System.Drawing.Font("Microsoft New Tai Lue", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.Location = new System.Drawing.Point(223, 9);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(85, 23);
+            this.btnBuscar.TabIndex = 49;
+            this.btnBuscar.Text = "BUSCAR";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Location = new System.Drawing.Point(117, 9);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(100, 20);
+            this.txtBuscar.TabIndex = 50;
             // 
             // Vusuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtBuscar);
+            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.txtCod);
             this.Controls.Add(this.rbtnFemenino);
             this.Controls.Add(this.rbtnMasculino);
@@ -325,5 +347,7 @@
         private System.Windows.Forms.RadioButton rbtnMasculino;
         private System.Windows.Forms.RadioButton rbtnFemenino;
         private System.Windows.Forms.TextBox txtCod;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.TextBox txtBuscar;
     }
 }

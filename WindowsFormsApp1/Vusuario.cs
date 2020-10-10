@@ -14,6 +14,7 @@ namespace WindowsFormsApp1
     {
 
         string sexo = null;
+        
 
         public Vusuario()
         {
@@ -199,7 +200,7 @@ namespace WindowsFormsApp1
                     eliminar01.eliminarUsuario( Convert.ToInt32( txtCod.Text));
 
 
-                    mensajeOK("CLIENTE ELIMINADO CORRECTAMENTE!");
+                    mensajeOK("DATO ELIMINADO CORRECTAMENTE!");
                     listarUsuarios();
 
                 }
@@ -253,6 +254,26 @@ namespace WindowsFormsApp1
             {
                 mensajeError(ev.Message);
             
+            }
+
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                if (txtCod.Text == string.Empty)
+                {
+                    Cusuario buscar01 = new Cusuario();
+                    tblUsuario.DataSource = buscar01.buscarUsuario(txtBuscar.Text);
+                }
+            }
+            catch (Exception ev)
+            {
+
+                MessageBox.Show(ev.Message);
+
             }
 
         }

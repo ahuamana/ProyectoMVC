@@ -219,5 +219,11 @@ namespace WindowsFormsApp1
         {
             nuevo();
         }
+
+        private void btnbuscar_Click(object sender, EventArgs e)
+        {
+
+
+        }
     }
 }
