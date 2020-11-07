@@ -54,7 +54,16 @@ namespace WindowsFormsApp1
 
 
 
+        public DataTable BuscarProveedor(string codigo)
+        {
 
+            DataTable tblrecibir03;
+
+            Mproveedor buscar01 = new Mproveedor();
+            tblrecibir03 = buscar01.buscarProveedor(codigo);
+            return tblrecibir03;
+
+        }
 
 
 

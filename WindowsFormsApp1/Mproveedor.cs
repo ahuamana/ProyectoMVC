@@ -99,7 +99,24 @@ namespace WindowsFormsApp1
             cerrarConexion();
         }
 
+        public DataTable buscarProveedor(string codigo)
+        {
 
+            DataTable tabla01 = new DataTable();
+
+            cmd.Connection = abrirConexion();
+            cmd.CommandText = "SP_B_T_PROVEEDORES";
+            cmd.Parameters.AddWithValue("BUSCAR", codigo);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            LectorFilas = cmd.ExecuteReader();
+            tabla01.Load(LectorFilas);
+            LectorFilas.Close();
+
+            cerrarConexion();
+
+            return tabla01;
+        }
 
 
 

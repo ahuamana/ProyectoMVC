@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Menu;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -223,6 +224,30 @@ namespace WindowsFormsApp1
         private void btnbuscar_Click(object sender, EventArgs e)
         {
 
+
+        }
+
+        private void tblCliente_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            Vventas ventanaSon = Owner as Vventas;
+
+            try
+            {
+
+                ventanaSon.txtCodCliente.Text = tblCliente.SelectedRows[0].Cells[0].Value.ToString();
+                ventanaSon.txtDNICliente.Text = tblCliente.SelectedRows[0].Cells[1].Value.ToString();
+                ventanaSon.txtNomCliente.Text = tblCliente.SelectedRows[0].Cells[2].Value.ToString();
+                ventanaSon.txtApeCliente.Text = tblCliente.SelectedRows[0].Cells[3].Value.ToString();
+                ventanaSon.txtDirecCliente.Text = tblCliente.SelectedRows[0].Cells[4].Value.ToString();
+
+                this.Close();
+            }
+            catch (Exception ev)
+            {
+                MessageBox.Show(ev.Message);
+
+            }
 
         }
     }

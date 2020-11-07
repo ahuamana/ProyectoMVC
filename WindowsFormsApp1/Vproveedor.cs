@@ -220,7 +220,12 @@ namespace WindowsFormsApp1
 
         }
 
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            Cproveedor buscar01 = new Cproveedor();
+            tblProveedores.DataSource = buscar01.BuscarProveedor(txtRUC_DNI.Text);
 
 
+        }
     }
 }

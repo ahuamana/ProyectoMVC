@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FontAwesome.Sharp, Version=5.15.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\FontAwesome.Sharp.5.15.1\lib\net472\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Microsoft.VisualBasic.PowerPacks, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
@@ -55,7 +58,25 @@
     <Compile Include="Cproducto.cs" />
     <Compile Include="Cproveedor.cs" />
     <Compile Include="Cstock.cs" />
+    <Compile Include="CstockYproductos.cs" />
     <Compile Include="Cusuario.cs" />
+    <Compile Include="Cventas.cs" />
+    <Compile Include="listaClientesyTotales.cs" />
+    <Compile Include="listaProductoVentas.cs" />
+    <Compile Include="MstockYproductos.cs" />
+    <Compile Include="Mventas.cs" />
+    <Compile Include="VstockYproductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VstockYproductos.designer.cs">
+      <DependentUpon>VstockYproductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vventas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vventas.designer.cs">
+      <DependentUpon>Vventas.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +122,12 @@
     <Compile Include="Vusuario.Designer.cs">
       <DependentUpon>Vusuario.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="VstockYproductos.resx">
+      <DependentUpon>VstockYproductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vventas.resx">
+      <DependentUpon>Vventas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainPrincipal.resx">
       <DependentUpon>MainPrincipal.cs</DependentUpon>
     </EmbeddedResource>
@@ -129,6 +156,7 @@
     <EmbeddedResource Include="Vusuario.resx">
       <DependentUpon>Vusuario.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -153,6 +181,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\cancel_16px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\a1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\a1-16p.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\baseline_minimize_black_18dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close18dpx2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close18dpx1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\baseline_minimize_black_18dp1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

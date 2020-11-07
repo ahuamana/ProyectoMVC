@@ -66,6 +66,7 @@
             this.tblCliente.Size = new System.Drawing.Size(697, 206);
             this.tblCliente.TabIndex = 0;
             this.tblCliente.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblCliente_CellClick);
+            this.tblCliente.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblCliente_CellDoubleClick);
             // 
             // label1
             // 

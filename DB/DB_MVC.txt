@@ -92,6 +92,60 @@ CREATE TRIGGER TR_FILL_STOCK ON dbo.TB_Productos
 FOR INSERT AS INSERT INTO TB_Stock (STOC_COD_PRODUCTO,STOC_INICIAL)
 SELECT PROD_COD, 0 FROM Inserted
 
+========================================================================
+========================================================================
+
+
+create table TB_Trabajador (
+
+TRAB_ID int IDENTITY(1,1),
+TRAB_NOMBRES nvarchar (50) not null,
+TRAB_APELLIDOS nvarchar (50)not null,
+TRAB_SEXO nvarchar(1) not null,
+TRAB_DOCUMENTO nvarchar(10) PRIMARY KEY,
+TRAB_DIRECCION nvarchar(100),
+TRAB_TELEFONO nvarchar(15),
+TRAB_EMAIL nvarchar(50),
+TRAB_ACCESO nvarchar(50),
+TRAB_PASSWORD nvarchar(20),
+TRAB_isActive int
+
+);
+
+
+
+
+
+create table TB_Ventas (
+
+VENT_ID int PRIMARY KEY not null,
+VENT_IDCliente nvarchar (11) not null,
+VENT_DNITrabajador nvarchar(10)not null,
+VENT_FECHA date,
+VENT_COMPROBANTE nvarchar (30)
+
+CONSTRAINT RELACION_A_TB_CLIENTES FOREIGN KEY (VENT_IDCliente) REFERENCES Clientes (CODIGO),
+CONSTRAINT RELACION_A_TB_TRABAJADOR FOREIGN KEY (VENT_DNITrabajador) REFERENCES TB_Trabajador (TRAB_DOCUMENTO)
+);
+
+
+
+create table TB_Detalle_Venta(
+
+DETAVENT_ID int IDENTITY primary key not null,
+DETAVENT_IDVENTA int not null,
+DETAVENT_COD_Producto int not null,
+DETAVENT_CANTIDAD int not null,
+DETAVENT_PRECIO_VENTA decimal(18,2) not null,
+DETAVENT_DESCUENTO decimal(18,2) not null,
+
+
+CONSTRAINT RELACION_A_VENTAS FOREIGN KEY (DETAVENT_IDVENTA) REFERENCES TB_Ventas (VENT_ID),
+CONSTRAINT RELACION_A_PRODUCTO FOREIGN KEY (DETAVENT_COD_Producto) REFERENCES TB_Productos (PROD_COD),
+);
+
+
+
 
 
 ======================================
@@ -124,4 +178,7 @@ insert into Presentacion values ('PQT 13',13);
 insert into Presentacion values ('PQT 14',14);
 insert into Presentacion values ('PQT 15',15);
 insert into Presentacion values ('PQT 16',16);
+
+
+insert into Trabajador values ('Antony','Huaman','M','73962071','av peru','+51930292619','test@gmail.com','Principal','12345678',1)
 

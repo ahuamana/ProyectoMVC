@@ -16,3 +16,24 @@ F:\ANTONY\Proyectos Codigos\C#\_ProyectosAvanzados\SistemaVentas_MVC\WindowsForm
 F:\ANTONY\Proyectos Codigos\C#\_ProyectosAvanzados\SistemaVentas_MVC\WindowsFormsApp1\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
 F:\ANTONY\Proyectos Codigos\C#\_ProyectosAvanzados\SistemaVentas_MVC\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Vlogin.resources
 F:\ANTONY\Proyectos Codigos\C#\_ProyectosAvanzados\SistemaVentas_MVC\WindowsFormsApp1\obj\Debug\ProyectoMVC.csproj.CopyComplete
+F:\ANTONY\ProyectosCodigos\C#\_ProyectosAvanzados\SistemaVentas_MVC\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+F:\ANTONY\ProyectosCodigos\C#\_ProyectosAvanzados\SistemaVentas_MVC\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+F:\ANTONY\ProyectosCodigos\C#\_ProyectosAvanzados\SistemaVentas_MVC\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+F:\ANTONY\ProyectosCodigos\C#\_ProyectosAvanzados\SistemaVentas_MVC\WindowsFormsApp1\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
+F:\ANTONY\ProyectosCodigos\C#\_ProyectosAvanzados\SistemaVentas_MVC\WindowsFormsApp1\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
+F:\ANTONY\ProyectosCodigos\C#\_ProyectosAvanzados\SistemaVentas_MVC\WindowsFormsApp1\obj\Debug\ProyectoMVC.csprojAssemblyReference.cache
+F:\ANTONY\ProyectosCodigos\C#\_ProyectosAvanzados\SistemaVentas_MVC\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.MainPrincipal.resources
+F:\ANTONY\ProyectosCodigos\C#\_ProyectosAvanzados\SistemaVentas_MVC\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+F:\ANTONY\ProyectosCodigos\C#\_ProyectosAvanzados\SistemaVentas_MVC\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Vcliente.resources
+F:\ANTONY\ProyectosCodigos\C#\_ProyectosAvanzados\SistemaVentas_MVC\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Vlogin.resources
+F:\ANTONY\ProyectosCodigos\C#\_ProyectosAvanzados\SistemaVentas_MVC\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Vproducto.resources
+F:\ANTONY\ProyectosCodigos\C#\_ProyectosAvanzados\SistemaVentas_MVC\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Vproveedor.resources
+F:\ANTONY\ProyectosCodigos\C#\_ProyectosAvanzados\SistemaVentas_MVC\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Vusuario.resources
+F:\ANTONY\ProyectosCodigos\C#\_ProyectosAvanzados\SistemaVentas_MVC\WindowsFormsApp1\obj\Debug\ProyectoMVC.csproj.GenerateResource.cache
+F:\ANTONY\ProyectosCodigos\C#\_ProyectosAvanzados\SistemaVentas_MVC\WindowsFormsApp1\obj\Debug\ProyectoMVC.csproj.CoreCompileInputs.cache
+F:\ANTONY\ProyectosCodigos\C#\_ProyectosAvanzados\SistemaVentas_MVC\WindowsFormsApp1\obj\Debug\ProyectoMVC.csproj.CopyComplete
+F:\ANTONY\ProyectosCodigos\C#\_ProyectosAvanzados\SistemaVentas_MVC\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+F:\ANTONY\ProyectosCodigos\C#\_ProyectosAvanzados\SistemaVentas_MVC\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+F:\ANTONY\ProyectosCodigos\C#\_ProyectosAvanzados\SistemaVentas_MVC\WindowsFormsApp1\bin\Debug\FontAwesome.Sharp.dll
+F:\ANTONY\ProyectosCodigos\C#\_ProyectosAvanzados\SistemaVentas_MVC\WindowsFormsApp1\obj\Debug\Menu.Vventas.resources
+F:\ANTONY\ProyectosCodigos\C#\_ProyectosAvanzados\SistemaVentas_MVC\WindowsFormsApp1\obj\Debug\Menu.VstockYproductos.resources

@@ -30,6 +30,7 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.txtProd_Codigo = new System.Windows.Forms.TextBox();
             this.tblProductos = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
@@ -60,7 +61,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.tblStock = new System.Windows.Forms.DataGridView();
-            this.btnBuscar = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblProductos)).BeginInit();
@@ -107,6 +107,16 @@
             this.tabPage1.Text = "Producto";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Location = new System.Drawing.Point(195, 48);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscar.TabIndex = 19;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
             // txtProd_Codigo
             // 
             this.txtProd_Codigo.Location = new System.Drawing.Point(89, 16);
@@ -127,6 +137,7 @@
             this.tblProductos.Size = new System.Drawing.Size(676, 179);
             this.tblProductos.TabIndex = 17;
             this.tblProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblProductos_CellClick);
+            this.tblProductos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblProductos_CellDoubleClick);
             // 
             // label6
             // 
@@ -386,16 +397,6 @@
             this.tblStock.Size = new System.Drawing.Size(697, 184);
             this.tblStock.TabIndex = 0;
             this.tblStock.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblStock_CellClick);
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Location = new System.Drawing.Point(195, 48);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
-            this.btnBuscar.TabIndex = 19;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // Vproducto
             // 

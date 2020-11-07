@@ -127,6 +127,24 @@ namespace WindowsFormsApp1
         }
 
 
+        public DataTable mostrarProductoYstock()
+        {
+
+            DataTable tabla01 = new DataTable();
+
+            cmd.Connection = abrirConexion();
+            cmd.CommandText = "SP_C_T_PRODUCTOS";
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            LectorFilas = cmd.ExecuteReader();
+            tabla01.Load(LectorFilas);
+            LectorFilas.Close();
+
+            cerrarConexion();
+
+            return tabla01;
+        }
+
 
     }
 }

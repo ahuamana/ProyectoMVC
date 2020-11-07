@@ -383,5 +383,13 @@ namespace WindowsFormsApp1
 
 
         }
+
+        private void tblProductos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+
+
+
+        }
     }
 }
