@@ -122,5 +122,15 @@ namespace WindowsFormsApp1
             vtn01.Show();
 
         }
+
+        private void rEPORTESToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            //Hace referencia al formulario VreporteVentas
+            formularioEnvio vtn01 = new formularioEnvio();
+            vtn01.Show();
+           
+
+        }
     }
 }

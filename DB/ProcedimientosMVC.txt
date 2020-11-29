@@ -444,10 +444,46 @@ UPDATE TB_Stock SET STOC_INICIAL=(STOC_INICIAL - @CANTIDAD_PRODUCTO)
 WHERE STOC_COD_PRODUCTO=@COD
 GO
 
+=============================================
+=============================================
+--Buscar Cliente
+
+
+CREATE PROC SP_B_T_CLIENTE
+@BUSCAR NVARCHAR(50)
+AS
+SELECT * FROM Clientes TC
+WHERE TC.DNI_RUC LIKE '%'+@BUSCAR+'%' AND TC.isActiveCli=1
+
+
+==================================================
 
 
 
+CREATE PROC SP_R_T_Boletas
+@fromDate date,
+@toDate date
 
+AS
+Select  V.VENT_ID AS [ID],
+		V.VENT_FECHA	AS [FECHA] ,
+		C.NOMBRES + ', '+ C.APELLIDOS AS CLIENTE,
+		Productos=STUFF ((SELECT ' - '+ 'x'+ CONVERT (NVARCHAR(10), DV2.DETAVENT_CANTIDAD)+ ' '+ PROD_NOMBRE + ' ['+ TB_Presentacion.PRES_DESCRIPCION + ']'
+			FROM TB_Detalle_Venta DV2
+			inner join TB_Productos on TB_Productos.PROD_COD=DV2.DETAVENT_COD_Producto
+			inner join TB_Presentacion on TB_Presentacion.PRES_COD=TB_Productos.PROD_COD_PRESEN 
+			where DV2.DETAVENT_IDVENTA = DV1.DETAVENT_IDVENTA
+			for xml  path ('')), 1,2, ''),
+		sum ((DV1.DETAVENT_CANTIDAD * DV1.DETAVENT_PRECIO_VENTA) - DV1.DETAVENT_DESCUENTO) as TOTAL
 
+		
+from TB_Ventas V
+inner join Clientes C on C.CODIGO=V.VENT_IDCliente
+inner join TB_Detalle_Venta DV1 on DV1.DETAVENT_IDVENTA=V.VENT_ID
+where V.VENT_FECHA between @fromDate and @toDate
+group by V.VENT_ID,  DV1.DETAVENT_IDVENTA, V.VENT_FECHA, C.NOMBRES, C.APELLIDOS
+order by V.VENT_ID asc
+
+exec SP_R_T_Boletas '2020/07/10','2020/11/28'
 
 

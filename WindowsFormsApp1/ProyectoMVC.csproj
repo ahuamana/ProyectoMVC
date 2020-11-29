@@ -36,6 +36,24 @@
     <Reference Include="FontAwesome.Sharp, Version=5.15.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\FontAwesome.Sharp.5.15.1\lib\net472\FontAwesome.Sharp.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Microsoft.VisualBasic.PowerPacks, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
@@ -61,10 +79,21 @@
     <Compile Include="CstockYproductos.cs" />
     <Compile Include="Cusuario.cs" />
     <Compile Include="Cventas.cs" />
+    <Compile Include="Mreportes.cs" />
+    <Compile Include="NetSalesByPeriod.cs" />
+    <Compile Include="SalesListing.cs" />
+    <Compile Include="SalesReport.cs" />
+    <Compile Include="VreporteVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VreporteVentas.designer.cs">
+      <DependentUpon>VreporteVentas.cs</DependentUpon>
+    </Compile>
     <Compile Include="listaClientesyTotales.cs" />
     <Compile Include="listaProductoVentas.cs" />
     <Compile Include="MstockYproductos.cs" />
     <Compile Include="Mventas.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="VstockYproductos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +151,10 @@
     <Compile Include="Vusuario.Designer.cs">
       <DependentUpon>Vusuario.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ReportInforme.rdlc" />
+    <EmbeddedResource Include="VreporteVentas.resx">
+      <DependentUpon>VreporteVentas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VstockYproductos.resx">
       <DependentUpon>VstockYproductos.cs</DependentUpon>
     </EmbeddedResource>
@@ -157,6 +190,8 @@
       <DependentUpon>Vusuario.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\NetSalesByPeriod.datasource" />
+    <None Include="Properties\DataSources\SalesListing.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -199,6 +234,25 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\baseline_minimize_black_18dp1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close18dpx11.png" />
+    <None Include="Resources\outline_highlight_off_white_18dp1.png" />
+    <None Include="Resources\outline_minimize_white_18dp1.png" />
+    <None Include="Resources\outline_highlight_off_white_18dp2.png" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

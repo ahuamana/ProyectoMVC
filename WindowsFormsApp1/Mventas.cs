@@ -91,13 +91,13 @@ namespace WindowsFormsApp1
         }
 
 
-
         public void IngresarVentas(string numFactura, string codigoCliente, string Vendedor, string fechaActual, string comprobante, DataTable DTDETALLE)
         {
 
 
-
             DateTime fechaActual2 = Convert.ToDateTime(fechaActual);
+
+
 
             cmd.Connection = abrirConexion();
 
@@ -108,7 +108,7 @@ namespace WindowsFormsApp1
             cmd.Parameters.AddWithValue("IDVENTA", Convert.ToInt32(numFactura));
             cmd.Parameters.AddWithValue("IDCLIENTE", codigoCliente);
             cmd.Parameters.AddWithValue("NUMTRABAJADOR", Vendedor);
-            cmd.Parameters.AddWithValue("FECHA", fechaActual);
+            cmd.Parameters.AddWithValue("FECHA", fechaActual2);
             cmd.Parameters.AddWithValue("TIPO_COMPROBANTE", comprobante);
             cmd.ExecuteNonQuery();
             cmd.Parameters.Clear();
@@ -116,8 +116,6 @@ namespace WindowsFormsApp1
             IngresarDetalleVenta(numFactura, DTDETALLE);
 
             //Limpiar los campos
-
-
 
         }
 
@@ -213,6 +211,10 @@ namespace WindowsFormsApp1
             return tabla;
 
         }
+
+
+
+
 
     }
 }

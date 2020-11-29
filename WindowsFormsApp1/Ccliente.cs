@@ -49,6 +49,16 @@ namespace WindowsFormsApp1
 
         }
 
+        public DataTable buscarCliente(string codigo)
+        {
+
+            DataTable tblrecibir03;
+
+            Mcliente buscar01 = new Mcliente();
+            tblrecibir03 = buscar01.BuscarCliente(codigo);
+            return tblrecibir03;
+
+        }
 
 
     }

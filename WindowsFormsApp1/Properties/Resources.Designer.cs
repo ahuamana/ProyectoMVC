@@ -123,6 +123,16 @@ namespace WindowsFormsApp1.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap close18dpx11 {
+            get {
+                object obj = ResourceManager.GetObject("close18dpx11", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap close18dpx2 {
             get {
                 object obj = ResourceManager.GetObject("close18dpx2", resourceCulture);
@@ -153,9 +163,39 @@ namespace WindowsFormsApp1.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap outline_highlight_off_white_18dp1 {
+            get {
+                object obj = ResourceManager.GetObject("outline_highlight_off_white_18dp1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap outline_highlight_off_white_18dp2 {
+            get {
+                object obj = ResourceManager.GetObject("outline_highlight_off_white_18dp2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap outline_minimize_white_18dp {
             get {
                 object obj = ResourceManager.GetObject("outline_minimize_white_18dp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap outline_minimize_white_18dp1 {
+            get {
+                object obj = ResourceManager.GetObject("outline_minimize_white_18dp1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

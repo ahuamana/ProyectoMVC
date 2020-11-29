@@ -1,0 +1,13 @@
+
+
+--Se realizo a travez de procedimientos almacenados
+
+CREATE PROC SP_C_T_USUARIO_LOGIN
+@USERNAME NVARCHAR(50),
+@PASSWORD NVARCHAR(50)
+AS
+SELECT * FROM TB_USUARIOS 
+where TRAB_EMAIL=@USERNAME AND TRAB_PASSWORD=@PASSWORD AND TRAB_isActive=1
+
+
+exec SP_C_T_USUARIO_LOGIN '' OR ''='','' OR ''=''

@@ -223,7 +223,8 @@ namespace WindowsFormsApp1
 
         private void btnbuscar_Click(object sender, EventArgs e)
         {
-
+            Ccliente buscar01 = new Ccliente();
+            tblCliente.DataSource = buscar01.buscarCliente(txtCodCliente.Text);
 
         }
 

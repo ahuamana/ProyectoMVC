@@ -11,7 +11,8 @@ git remote add origin https://github.com/ahuamana/ProyectoMVC.git
 git push -u origin master 
 
 
-//Update
+//Update repositorio
+git add *
 git commit -a -m "Nombre_del_Commit"
 git push
 
